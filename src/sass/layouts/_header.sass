@@ -1,0 +1,45 @@
+.header 
+	padding-top: 2.4rem
+	background-image: url("data:image/svg+xml, %3Csvg width='200' height='200' viewBox='0 0 200 2--' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='100' cy='100' r='100' fill='%23FFAB08'/%3E%3C/svg%3E")
+	background-repeat: no-repeat
+	background-size: 250vw
+	background-position: bottom
+	&__inner
+		max-width: 50% 
+		margin: 0 auto
+	&__logo-box
+		position: relative
+		text-align: center
+		margin-bottom: 5rem
+	&__logo-icon 
+		transition: transform .3s ease
+	&__logo-link
+		transition: transform .3s ease-in
+		&:hover 
+			display: inline-block
+			transform: scale(1.1)
+	&__content 
+		display: flex
+		align-items: center
+		column-gap: 6rem
+		&-img__box 
+			position: relative
+			&::after 
+				content: ''
+				position: absolute 
+				bottom: -60px 
+				left: 50% 
+				transform: translateX(-50%)
+				width: 21rem 
+				height: 25px
+				background-color: #F2A40C
+				border-radius: 50%
+	&__title 
+		margin-bottom: 5rem
+		color: $light-color
+	&__subtitle 
+		color: $secondary-color
+	&__descr 
+		color: $light-color 
+		@include font(1.6rem, 2.2rem)
+		
