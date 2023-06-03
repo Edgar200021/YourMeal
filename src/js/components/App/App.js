@@ -1,8 +1,10 @@
-import Header from "../Header/Header"
+import Header from "../Header"
+import Main from "../Main/Main"
 
 class App{
 	render() {
 		Header.render()
+		Main.render()
 	}
 }
 
