@@ -4,7 +4,7 @@ class GetData{
 	async render(url) {
 		const res = await fetch(url)
 		if(!res.ok) {
-			throw new Error(`Произошла ошибка, код ошибки${res.status}`)
+			return false
 		}
 		
 		return await res.json()
