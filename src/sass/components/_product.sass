@@ -1,0 +1,22 @@
+.product
+	max-width: 32.4rem 
+	padding: 12px
+	display: grid 
+	grid-template-rows: minmax(22rem, min-content) 1fr min-content
+	background-color: $light-color 
+	border-radius: $br-main
+	&__img-box 
+		margin-bottom: 1.6rem 
+	&__info 
+		margin-bottom: 8px
+	&__price 
+		display: inline-block
+		margin-bottom: 1rem
+		@include font(2.4rem, 100%, 600)
+	&__descr 
+		@include font(1.6rem, 130%)
+		margin-bottom: 3rem
+	&__weight 
+		display: inline-block
+		@include font(1.6rem, 130%, 600)
+		color: #B1B1B1

@@ -1,12 +1,16 @@
-import Nav from "../Nav/Nav"
+import Nav from "../Nav"
+import Products from "../Products"
+import Basket from "../Basket"
 
 import { ROOT_INDEX } from "../../constants/root"
 class Main{
-	render() {
+	async render() {
 		const main = `
 			<main class="main">
 				<div class="main__container">
-					${Nav.render()}
+				${Nav.render()}
+				${await Products.render()} 
+				${Basket.render()}
 				</div>
 			</main>
 		`

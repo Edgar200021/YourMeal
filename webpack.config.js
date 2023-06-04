@@ -13,7 +13,7 @@ module.exports = {
   target,
   devtool,
   devServer: {
-    port: 3000,
+    port: 3005,
     open: true,
     hot: true,
   },
@@ -75,6 +75,7 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|webp|gif|svg)$/i,
+		
         use: devMode
           ? []
           : [

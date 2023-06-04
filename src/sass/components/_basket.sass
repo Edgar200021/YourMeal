@@ -1,0 +1,86 @@
+.basket
+	grid-column: center-start / col-end 2
+	grid-row: 2 / 3
+	border-radius: $br-main
+	background-color: $light-color
+	align-self: start
+	margin-right: 3rem
+	margin-top: 7.3rem
+	&__inner 
+		padding: 2.4rem 1.6rem
+		display: grid 
+		grid-template-rows: min-content minmax(25rem, 1fr) repeat(3, min-content)
+	&__top 
+		display: flex 
+		justify-content: space-between
+		align-items: center
+		padding-bottom: 1.2rem
+		margin-bottom: 1.6rem
+		border-bottom: 2px solid $grey-color
+	&__count 
+		display: inline-block
+		padding: 2px 1.7rem
+		background-color: $grey-color
+		@include font(1.2rem, 1.6rem)
+		border-radius: 6px
+	&__list 
+		margin-bottom: 1.6rem
+	&__item 
+		display: flex 
+		justify-content: flex-start 
+		align-items: center
+		column-gap: 6px
+		padding-bottom: 1.5rem 
+		border-bottom: 2px solid $grey-color
+		&:not(:last-child)
+			margin-bottom: 1.5rem
+		&-img__box 
+			border-radius: 8px
+		&-img 
+			max-width: 64px
+		&-weight 
+			display: block
+			@include font(1.2rem, 1.6rem)
+			color: #B1B1B1
+			margin-bottom: .6rem
+		&-price
+			@include font(1.2rem, 1.6rem)
+		&-counter 
+			max-width: 8.4rem 
+			width: 100%
+			display: flex 
+			align-items: center
+			justify-content: space-between
+			margin-left: auto 
+			padding: 1rem 1.2rem 
+			background-color: $grey-color
+			border-radius: 12px
+			@include font(1.6rem, 2.2rem)
+		&-btn 
+			&:first-child
+				transform: translateY(-2px)
+	&__total 
+		display: flex 
+		align-items: center 
+		justify-content: space-between
+		margin-bottom: 2.4rem
+		@include font(1.6rem, 130%)
+	&__btn.btn
+		@include btn($secondary-color, $light-color)
+		margin-bottom: 1.2rem
+	&__delivery 
+		position: relative
+		@include font(1.2rem, 1.6rem)
+		padding-left: 32px
+		&::before
+			content: ''
+			position: absolute 
+			left: 0
+			top: 50%
+			transform: translateY(-50%)
+			width: 24px 
+			height: 24px 
+			background: url('../../assets/icons/delivery.png') center/cover no-repeat
+		
+			
+

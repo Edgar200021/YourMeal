@@ -3,3 +3,21 @@
 	line-height: $height 
 	font-weight: $weight 
 	font-family: family
+
+
+@mixin btn($bg-color, $color)
+	padding: 12px 
+	border: none 
+	@include font(1.6rem, 100%)
+	border-radius: 12px 
+	background: none
+	background-color: $bg-color
+	color: $color
+	cursor: pointer 
+	transition: transform .3s ease, background-color .3s ease
+	&:hover 
+		transform: translateY(-5px)
+		background-color: darken($bg-color, 20%)
+	&:active
+		transform: translateY(-2px)
+		background-color: lighten($bg-color, 1%)
