@@ -1,10 +1,12 @@
 import Header from "../Header"
 import Main from "../Main"
+import Footer from "../Footer"
 
 class App{
-	render() {
+	async render() {
 		Header.render()
-		Main.render()
+		await Main.render()
+		Footer.render()
 	}
 }
 

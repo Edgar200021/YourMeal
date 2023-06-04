@@ -1,0 +1,52 @@
+.footer
+	background-color: $light-color
+	padding: 5rem 0 4rem
+	&__inner 
+		max-width: 126rem 
+		margin: 0 auto
+		display: flex 
+		justify-content: flex-end 
+		align-items: flex-start
+		gap: 12.6rem
+	&__left 
+		margin-right: auto
+		@include font(1.2rem, 1.6rem)
+		& * 
+			display: block
+	&__logo 
+		max-width: 30rem 
+		margin-bottom:6rem
+	&__middle-descr
+		display: block
+		@include font(2.4rem, 100%)
+		margin-bottom: 2.5rem
+	&__middle-number 
+		position: relative
+		@include font(1.6rem, 130%)
+		padding-left: 2.8rem
+		display: block
+		&::before 
+			content: ''
+			display: inline-block
+			position: absolute 
+			left: 0 
+			top: 50% 
+			transform: translateY(-50%)
+			width: 18px 
+			height: 18px
+			background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_16_411)'%3E%3Cpath d='M20.01 15.38C18.78 15.38 17.59 15.18 16.48 14.82C16.13 14.7 15.74 14.79 15.47 15.06L13.9 17.03C11.07 15.68 8.42 13.13 7.01 10.2L8.96 8.54C9.23 8.26 9.31 7.87 9.2 7.52C8.83 6.41 8.64 5.22 8.64 3.99C8.64 3.45 8.19 3 7.65 3H4.19C3.65 3 3 3.24 3 3.99C3 13.28 10.73 21 20.01 21C20.72 21 21 20.37 21 19.82V16.37C21 15.83 20.55 15.38 20.01 15.38Z' fill='black'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_16_411'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E") center/cover no-repeat
+	&__right-descr 	
+		display: block
+		@include font(2.4rem, 100%)
+		margin-bottom: 2.5rem
+	&__social 
+		display: flex 
+		gap: 1.6rem
+		&-link
+			display: inline-block
+			width: 36px 
+			height: 36px 
+			border-radius: 50px 
+			transition: transform .3s ease
+			&:hover 
+				transform: scale(.9)
