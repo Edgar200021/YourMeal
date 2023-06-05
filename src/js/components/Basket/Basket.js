@@ -1,4 +1,6 @@
 import { UNIQUE_PRODUCTS_ID } from '../../constants/uniques'
+import emptyBasket from '/src/assets/img/notifications/empty-basket.png'
+
 
 class Basket {
   renderItem(img, price, descr, weight, id) {
@@ -31,7 +33,10 @@ class Basket {
 					<span class="basket__count">0</span>
 					</div>
 					<ul class="basket__list">
-				
+						<div class="basket__notification-box">
+						<h4 class="fourth-title">Коризна пуста</h4>
+						<img src=${emptyBasket} class="basket__notification">
+						</div>
 					</ul>
 					<div class="basket__total">
 						<span class="basket__total-descr">Итого</span>
@@ -57,10 +62,16 @@ class Basket {
       }
 
       const parent = target.closest('.basket__inner'),
+	 	 basketBtn = parent.querySelector('.basket__btn'),
+		  basketDelivery = parent.querySelector('.basket__delivery'),
+        basketList = target.closest('.basket__list'),
+		basketNotification = basketList.querySelector('.basket__notification-box'),
         totalPrice = parent.querySelector('.basket__total-price'),
         count = parent.querySelector('.basket__count'),
         product = target.closest('.basket__item'),
         productPrice = product.querySelector('.basket__item-price')
+        console.log("basketList", basketList)
+
 
       switch (target.dataset.calc) {
         case 'plus':
@@ -78,6 +89,11 @@ class Basket {
               Number(totalPrice.innerText.slice(0, -1)) -
                 Number(productPrice.innerText.slice(0, -1))
             ) + '₽'
+			if(+count.innerText === 1 && basketList.children.length === 2) {
+				basketNotification.style.display = 'block'
+				basketBtn.style.display = 'none'
+				basketDelivery.style.display = 'none'
+			  }
           if (+target.nextElementSibling.innerText === 1) {
             const index = UNIQUE_PRODUCTS_ID.findIndex(
               (id) => id === target.closest('.basket__item').dataset.id
@@ -87,10 +103,13 @@ class Basket {
           }
           target.nextElementSibling.innerText--
           count.innerText--
+		  
+		console.log( basketList.children.length);
           break
       }
     })
   }
+
 }
 
 export default new Basket()

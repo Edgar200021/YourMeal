@@ -1,5 +1,6 @@
 
 import NavItem from '../NavItem/NavItem'
+import Products from '../Products/Products'
 
 import burger from '../../../assets/icons/burger.png'
 import onion from '../../../assets/icons/onion.png'
@@ -16,21 +17,22 @@ class Nav{
 		const nav = `
 		<nav class="nav">
 			<ul class="nav__list">
-				${NavItem.render(burger, 'Бургеры')}
-				${NavItem.render(onion, 'Закуски')}
-				${NavItem.render(hotdog, 'Хот-доги')}
-				${NavItem.render(fastFood, 'Комбо')}
-				${NavItem.render(burito, 'Шаурма')}
-				${NavItem.render(pizza, 'Пицца')}
+				${NavItem.render(burger, 'Бургеры', 'burger')}
+				${NavItem.render(onion, 'Закуски', 'snack')}
+				${NavItem.render(hotdog, 'Хот-доги', 'hot-dog')}
+				${NavItem.render(fastFood, 'Комбо', 'combo')}
+				${NavItem.render(burito, 'Шаурма', 'shawarma')}
+				${NavItem.render(pizza, 'Пицца', 'pizza')}
 				${NavItem.render(noodles, 'Вок')}
-				${NavItem.render(doughnut, 'Десерты')}
-				${NavItem.render(ketchup, 'Соусы')}
+				${NavItem.render(doughnut, 'Десерты', 'dessert')}
+				${NavItem.render(ketchup, 'Соусы', 'sauce')}
 			</ul>
 		</nav>
 		`
 
 		return nav
 	}
+
 }
 
 export default new Nav()
