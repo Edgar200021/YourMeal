@@ -17,20 +17,52 @@ class Nav{
 		const nav = `
 		<nav class="nav">
 			<ul class="nav__list">
-				${NavItem.render(burger, 'Бургеры', 'burger')}
-				${NavItem.render(onion, 'Закуски', 'snack')}
-				${NavItem.render(hotdog, 'Хот-доги', 'hot-dog')}
-				${NavItem.render(fastFood, 'Комбо', 'combo')}
-				${NavItem.render(burito, 'Шаурма', 'shawarma')}
-				${NavItem.render(pizza, 'Пицца', 'pizza')}
-				${NavItem.render(noodles, 'Вок')}
-				${NavItem.render(doughnut, 'Десерты', 'dessert')}
-				${NavItem.render(ketchup, 'Соусы', 'sauce')}
+				${NavItem.render(burger, 'Бургеры', 1)}
+				${NavItem.render(onion, 'Закуски', 2)}
+				${NavItem.render(hotdog, 'Хот-доги', 3)}
+				${NavItem.render(fastFood, 'Комбо', 4)}
+				${NavItem.render(burito, 'Шаурма', 5)}
+				${NavItem.render(pizza, 'Пицца', 6)}
+				${NavItem.render(doughnut, 'Десерты', 7)}
+				${NavItem.render(ketchup, 'Соусы', 8)}
 			</ul>
 		</nav>
 		`
 
 		return nav
+	}
+
+
+	toggleContent() {
+		const nav = document.querySelector('.nav'),	
+			productsList = document.querySelectorAll('[data-products]')
+			
+			productsList.forEach((productList, i)=> {
+				if (i === 0) {
+					return
+				}
+				productList.classList.add('none')
+				productList.classList.remove('show')
+			})
+			
+
+		nav.addEventListener('click', (e) => {
+			const target = e.target 
+
+			if (!target || !target.matches('[data-tab]')) {
+				return
+			}
+
+			const productList = document.querySelector(`[data-products="${target.dataset.tab}"`)
+
+			productsList.forEach(productList => {
+				productList.classList.add('none')
+				productList.classList.remove('show')
+			})
+		
+			productList.classList.add('show')
+			productList.classList.remove('none')
+		})
 	}
 
 }

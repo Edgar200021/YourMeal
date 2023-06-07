@@ -8,6 +8,8 @@
 	justify-content: center 
 	align-items: center
 	background: rgba(0, 0, 0, 0.8)
+	&__active 
+		display: flex
 	&__wrapper 
 		min-width: 68rem
 		max-width: 68rem
@@ -32,27 +34,21 @@
 		margin-left: 0
 	&__title 
 		margin-bottom: 2.4rem
-	&__box
-		display: flex 
-		column-gap: 1.6rem 
+	&__info-box 
+		display: flex
+		column-gap: 1.6rem
 		align-items: flex-start
-	&__left
-		min-width: 28rem 
-		max-width: 28rem
-		display: flex 
-		flex-direction: column
-		flex-grow: 1
-	&__right 
-		display: flex 
-		flex-direction: column
-		flex-grow: 1
+		margin-bottom: 4rem
 	&__img-box 
-		margin-bottom: 4rem 
+		min-width: 28rem
+		max-width: 28rem
+		flex: 1
+	&__info 
+		flex: 1
 	&__btn.btn
 		@include btn($secondary-color, $light-color)
+		min-width: 28rem
 		margin-top: auto
-	&__info 
-		margin-bottom: 4rem 
 	&__descr 
 		@include font(1.6rem, 130%)
 		margin-bottom: 1rem 
@@ -71,9 +67,9 @@
 		color: #b1b1b1
 	&__actions
 		display: flex 
-		justify-content: space-between 
-		align-items: center
-		margin-top: auto
+		justify-content: flex-start
+		column-gap: 1.6rem
 	&__price 
 		@include font(2.4rem, 130%, 600)
+		margin-left: auto
 

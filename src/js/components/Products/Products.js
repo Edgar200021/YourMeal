@@ -6,9 +6,35 @@ import { UNIQUE_PRODUCTS_ID } from '../../constants/uniques'
 import { ROOT_INDEX } from '../../constants/root'
 import ProductModal from '../ProductModal/ProductModal'
 import burger from '/src/assets/img/burgers/burger-1.jpg'
+import burger2 from '/src/assets/img/burgers/burger-2.jpg'
+import burger3 from '/src/assets/img/burgers/burger-3.jpg'
+import burger4 from '/src/assets/img/burgers/burger-4.jpg'
+import burger5 from '/src/assets/img/burgers/burger-5.jpg'
+import burger6 from '/src/assets/img/burgers/burger-6.jpg'
+import snack from '/src/assets/img/snacks/snack-1.jpg'
+import snack2 from '/src/assets/img/snacks/snack-2.jpg'
+import snack3 from '/src/assets/img/snacks/snack-3.jpg'
+import hotdog from '/src/assets/img/hot-dogs/hot-dog1.jpg'
+import hotdog2 from '/src/assets/img/hot-dogs/hot-dog2.jpg'
+import hotdog3 from '/src/assets/img/hot-dogs/hot-dog3.jpg'
+import hotdog4 from '/src/assets/img/hot-dogs/hot-dog4.jpg'
+import hotdog5 from '/src/assets/img/hot-dogs/hot-dog5.jpg'
+import combo from '/src/assets/img/combo/combo-1.jpg'
+import shawerma from '/src/assets/img/shawerma/shawerma-1.jpg'
+import shawerma2 from '/src/assets/img/shawerma/shawerma-2.jpg'
+import pizza from '/src/assets/img/pizza/pizza-1.jpg'
+import pizza2 from '/src/assets/img/pizza/pizza-2.jpg'
+import pizza3 from '/src/assets/img/pizza/pizza-3.jpg'
+import dessert from '/src/assets/img/dessert/dessert-1.jpg'
+import dessert2 from '/src/assets/img/dessert/dessert-2.jpg'
+import dessert3 from '/src/assets/img/dessert/dessert-3.jpg'
+import sauce from '/src/assets/img/sauce/sauce-1.jpg'
+import sauce2 from '/src/assets/img/sauce/sauce-2.jpg'
+import sauce3 from '/src/assets/img/sauce/sauce-3.jpg'
+
 
 class Products {
-  renderProduct(data, productCategory) {
+  renderProduct(productList, title, productCategory, data) {
     let productElement = ''
 
     data.forEach(
@@ -30,7 +56,7 @@ class Products {
         productElement += `
 					<li class="product" data-ingridients='${ingredients}' data-descr='${description}' data-calorie='${calories}' data-key="${id}">
 						<div class="product__img-box">
-							<img src="${burger}" class="product__img">
+							<img src="${image}" class="product__img">
 						</div>
 						<div class="product__info">
 							<span class="product__price">${price}₽</span>
@@ -44,19 +70,20 @@ class Products {
     )
 
     const productWrapper = `
-		<section class="products">
-			<h2 class="products__title second-title">Бургеры</h2>
-			<ul class="products__container">${productElement}</ul>
-		</section>`
+	  	<div class="show" data-products=${productList}>
+		  <h2 class="products__title second-title">${title}</h2>
+		  <ul class="products__container">${productElement}</ul>
+		</div> 
+		`
 
     return productWrapper
   }
 
-  async render(productCategory = 'burger') {
+  async render(productList = 1, title = 'Бургеры', productCategory = 'burger') {
     const data = await getData.render(PRODUCTS_URL)
 
     return data
-      ? this.renderProduct(data, productCategory)
+      ? this.renderProduct(productList, title, productCategory, data)
       : Notification.errorNotif()
   }
 
@@ -79,7 +106,7 @@ class Products {
           .querySelector('.product__weight')
           .innerText.slice(0, -1),
         basketList = document.querySelector('.basket__list'),
-        basketNotification = basketList.querySelector(
+        basketNotification = document.querySelector(
           '.basket__notification-box'
         ),
         basketBtn = document.querySelector('.basket__btn'),
@@ -123,7 +150,9 @@ class Products {
   }
 
   showProductModal(parentSelector) {
-    const parent = document.querySelector(parentSelector)
+    const parent = document.querySelector(parentSelector),
+      modal = document.querySelector('.modal'),
+      modalInner = modal.querySelector('.modal__inner')
 
     parent.addEventListener('click', (e) => {
       const target = e.target
@@ -134,6 +163,7 @@ class Products {
       const product = target.closest('.product')
 
       const modalValues = {
+		id: product.dataset.key,
         title: product.querySelector('.product__descr').innerText,
         img: target.src,
         descr: product.dataset.descr,
@@ -145,20 +175,21 @@ class Products {
         price: product.querySelector('.product__price').innerText.slice(0, -1),
       }
 
-      ROOT_INDEX.insertAdjacentHTML(
-        'beforeend',
-        ProductModal.render(
-          modalValues.title,
-          modalValues.img,
-          modalValues.descr,
-          modalValues.ingridients,
-          modalValues.weight,
-          modalValues.calorie,
-          modalValues.price
-        )
+      modal.classList.add('modal__active')
+      modal.classList.remove('none')
+
+      modalInner.innerHTML = ProductModal.render(
+		modalValues.id,
+        modalValues.title,
+        modalValues.img,
+        modalValues.descr,
+        modalValues.ingridients,
+        modalValues.weight,
+        modalValues.calorie,
+        modalValues.price
       )
 
-	  document.body.style.overflow = 'hidden'
+      document.body.style.overflow = 'hidden'
     })
   }
 }

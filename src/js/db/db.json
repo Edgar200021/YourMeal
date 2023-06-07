@@ -1,3 +1,4 @@
+
 {
   "data": [
     {
@@ -15,7 +16,7 @@
         "Соус горчичный"
       ],
       "category": "burger",
-      "image": "https://ibb.co/WKfFhR8"
+      "image": "/assets/burger-1.jpg"
     },
     {
       "id": "4593457527",
@@ -35,7 +36,7 @@
         "Блю Чиз"
       ],
       "category": "burger",
-      "image": "https://ibb.co/pRYckKt"
+      "image": "/assets/burger-2.jpg"
     },
     {
       "id": "8818264880",
@@ -54,7 +55,7 @@
         "Чеддер"
       ],
       "category": "burger",
-      "image": "../../assets/img/burgers/burger-3.jpg"
+      "image": "/assets/burger-3.jpg"
     },
     {
       "id": "4667225618",
@@ -75,7 +76,7 @@
         "Чеддер"
       ],
       "category": "burger",
-      "image": "../../assets/img/burgers/burger-4.jpg"
+      "image": "/assets/burger-4.jpg"
     },
     {
       "id": "1223980593",
@@ -95,7 +96,7 @@
         "Кетчуп томатный"
       ],
       "category": "burger",
-      "image": "../../../assets/img/burgers/burger-5.jpg"
+      "image": "/assets/burger-5.jpg"
     },
     {
       "id": "3355055171",
@@ -114,7 +115,7 @@
         "Соус песто"
       ],
       "category": "burger",
-      "image": "../../../assets/img/burgers/burger-6.jpg"
+      "image": "/assets/burger-6.jpg"
     },
     {
       "id": "7029852449",
@@ -125,7 +126,7 @@
       "description": "Хрустящие чипсы из кукурузной тортильи",
       "ingredients": ["Начос", "Соус на выбор"],
       "category": "snack",
-      "image": "../../../assets/img/snacks/snack-1.jpg"
+      "image": "/assets/snack-1.jpg"
     },
     {
       "id": "7696061170",
@@ -136,7 +137,7 @@
       "description": "У нас он именно такой, каким любят его во всем мире — мягкий, рассыпчатый внутри и аппетитно хрустящий снаружи. Картофель нарезается крупными ломтиками и обжаривается в свежем фритюре. Для приготовления используются лучшие сорта. Хрустящее и сочное блюдо с разными соусами ждет вас!",
       "ingredients": ["Картофель", "Соус на выбор"],
       "category": "snack",
-      "image": "../../../assets/img/snacks/snack-2.jpg"
+      "image": "/assets/snack-2.jpg"
     },
     {
       "id": "3781849650",
@@ -151,7 +152,7 @@
         "Соус на выбор"
       ],
       "category": "snack",
-      "image": "../../../assets/img/snacks/snack-3.jpg"
+      "image": "/assets/snack-3.jpg"
     },
     {
       "id": "0700847980",
@@ -169,7 +170,7 @@
         "Соусы"
       ],
       "category": "hot-dog",
-      "image": "../../../assets/img/hot-dogs/hot-dog1.jpg"
+      "image": "/assets/hot-dog1.jpg"
     },
     {
       "id": "8818709061",
@@ -192,7 +193,7 @@
         "Соус"
       ],
       "category": "hot-dog",
-      "image": "../../../assets/img/hot-dogs/hot-dog2.jpg"
+      "image": "/assets/hot-dog2.jpg"
     },
     {
       "id": "4856056854",
@@ -213,7 +214,7 @@
         "Соус"
       ],
       "category": "hot-dog",
-      "image": "../../../assets/img/hot-dogs/hot-dog3.jpg"
+      "image": "/assets/hot-dog3.jpg"
     },
     {
       "id": "7445538462",
@@ -224,7 +225,7 @@
       "description": "Нестареющая классика",
       "ingredients": ["Булочка", "Сосиска", "Соусы"],
       "category": "hot-dog",
-      "image": "../../../assets/img/hot-dogs/hot-dog4.jpg"
+      "image": "/assets/hot-dog4.jpg"
     },
     {
       "id": "0245702138",
@@ -241,7 +242,7 @@
         "Острый соус"
       ],
       "category": "hot-dog",
-      "image": "../../../assets/img/hot-dogs/hot-dog5.jpg"
+      "image": "/assets/hot-dog5.jpg"
     },
     {
       "id": "6194519395",
@@ -260,7 +261,7 @@
         "Обжаренный лук"
       ],
       "category": "shawarma",
-      "image": "../../../assets/img/shawerma/shawerma-1.jpg"
+      "image": "/assets/shawerma-1.jpg"
     },
     {
       "id": "2620495882",
@@ -279,7 +280,7 @@
         "Соус"
       ],
       "category": "shawarma",
-      "image": "../../../assets/img/shawerma/shawerma-2.jpg"
+      "image": "/assets/shawerma-2.jpg"
     },
     {
       "id": "4941077801",
@@ -290,7 +291,7 @@
       "description": "2 любых бургера и картофель фри",
       "ingredients": ["Бургер", "Бургер", "Картофель фри", "Соус на выбор"],
       "category": "combo",
-      "image": "../../../assets/img/combo/combo-1.jpg"
+      "image": "/assets/combo-1.jpg"
     },
     {
       "id": "1110641351",
@@ -307,7 +308,7 @@
         "Творожный сыр"
       ],
       "category": "pizza",
-      "image": "../../../assets/img/pizza/pizza-1.jpg"
+      "image": "/assets/pizza-1.jpg"
     },
     {
       "id": "8671991648",
@@ -327,7 +328,7 @@
         "Оливки"
       ],
       "category": "pizza",
-      "image": "../../../assets/img/pizza/pizza-2.jpg"
+      "image":  "/assets/pizza-2.jpg"
     },
     {
       "id": "8297617295",
@@ -345,7 +346,7 @@
         "Оливки"
       ],
       "category": "pizza",
-      "image": "../../../assets/img/pizza/pizza-3.jpg"
+      "image":  "/assets/pizza-3.jpg"
     },
     {
       "id": "1908233603",
@@ -361,7 +362,7 @@
         "Грецкий орех"
       ],
       "category": "dessert",
-      "image": "../../../assets/img/dessert/dessert-1.jpg"
+      "image": "/assets/dessert-1.jpg"
     },
     {
       "id": "8136304087",
@@ -372,7 +373,7 @@
       "description": "Классичесий пончик",
       "ingredients": ["Пончик", "Посыпка", "Глазурь", "Начинка на выбор"],
       "category": "dessert",
-      "image": "../../../assets/img/dessert/dessert-2.jpg"
+      "image": "/assets/dessert-2.jpg"
     },
     {
       "id": "7477216608",
@@ -390,7 +391,7 @@
         "Сливки"
       ],
       "category": "dessert",
-      "image": "../../../assets/img/dessert/dessert-3.jpg"
+      "image": "/assets/dessert-3.jpg"
     },
     {
       "id": "1922643833",
@@ -401,7 +402,7 @@
       "description": "Соус Гамадари - ореховый соус на основе арахиса. Отлично подходит к овощам и холодным закускам",
       "ingredients": ["Арахис", "Кунжут", "Мирин", "Кунжутное масло"],
       "category": "sauce",
-      "image": "../../../assets/img/sauce/sauce-1.jpg"
+      "image": "/assets/sauce-1.jpg"
     },
     {
       "id": "5235966546",
@@ -412,7 +413,7 @@
       "description": "Сметанный острый соус - слегка острый, обладает приятным вкусом с нежной сливочной нотой.",
       "ingredients": ["Сметана", "Майонез", "Лайм", "Васаби"],
       "category": "sauce",
-      "image": "../../../assets/img/sauce/sauce-2.jpg"
+      "image": "/assets/sauce-2.jpg"
     },
     {
       "id": "8542732392",
@@ -429,7 +430,10 @@
         "Белый уксус"
       ],
       "category": "sauce",
-      "image": "../../../assets/img/sauce/sauce-3.jpg"
+      "image": "/assets/sauce-3.jpg"
     }
+  ],
+  "request": [
+	
   ]
 }

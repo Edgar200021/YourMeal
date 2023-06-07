@@ -6,10 +6,11 @@
 	align-self: start
 	margin-right: 3rem
 	margin-top: 7.3rem
+	margin-bottom: 10rem
 	&__inner 
 		padding: 2.4rem 1.6rem
 		display: grid 
-		grid-template-rows: min-content minmax(25rem, 1fr) repeat(3, min-content)
+		grid-template-rows: min-content minmax(25rem, 36rem) repeat(3, min-content)
 	&__top 
 		display: flex 
 		justify-content: space-between
@@ -24,8 +25,18 @@
 		@include font(1.2rem, 1.6rem)
 		border-radius: 6px
 	&__list 
+		padding: 5px
 		margin-bottom: 1.6rem
 		overflow-y: auto
+		&::-webkit-scrollbar	
+			width: 2px
+		&::-webkit-scrollbar-thumb
+			background-color: $secondary-color
+		&::-webkit-scrollbar-track
+			background-color: $grey-color
+			border-radius: 10px
+		&::-webkit-scrollbar-corner
+			background-color: $light-color
 	&__item 
 		display: flex 
 		justify-content: flex-start 

@@ -1,15 +1,24 @@
 import '../index.html'
 import '../sass/style.sass'
 
-import App from './components/App/App'
-import Products from './components/Products/Products'
-import Basket from './components/Basket/Basket'
+import App from './components/App'
+import Products from './components/Products'
+import Basket from './components/Basket'
+import Nav from './components/Nav'
+import ProductModal from './components/ProductModal'
+import Modal from './components/Modal'
 
 window.addEventListener('DOMContentLoaded', () => {
   ;(async () => {
     await App.render()
+	Modal.render()
     Products.addToBasket('.products')
 	Products.showProductModal('.products')
     Basket.calcPrice('.basket__list')
+	Basket.placeAnOrder()
+	Nav.toggleContent()
+	Modal.closeModal('.modal')
+	Modal.closeModalWithKeyboard()
+	ProductModal.addToBasket('.modal')
   })()
 })
