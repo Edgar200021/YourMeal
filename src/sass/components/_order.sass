@@ -1,11 +1,36 @@
 .order 
 	display: flex
 	align-items: center
+	&::before 
+		content: ''
+		position: absolute 
+		left: 0 
+		top: 0 
+		width: 50%
+		height: 100%
+		background-color: $accent-color
+		z-index: 1
+		border-top-left-radius: 24px
+		border-bottom-left-radius: 24px
 	&__left 
+		position: relative
+		text-align: center
 		flex: 1 
 		background-color: $accent-color
+		z-index: 2
+		&::after
+			content: ''
+			position: absolute 
+			bottom: -60px 
+			left: 50% 
+			transform: translateX(-50%)
+			width: 21rem 
+			height: 25px
+			background-color: #F2A40C
+			border-radius: 50%
 	&__right 
 		flex: 1
+		z-index: 2
 	&__img 
 		max-width: 19rem
 		min-width: 19rem

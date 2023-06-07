@@ -1,6 +1,7 @@
 import { UNIQUE_PRODUCTS_ID } from '../../constants/uniques'
+import Order from '../Order'
 import emptyBasket from '/src/assets/img/notifications/empty-basket.png'
-import orderImg from '/src/assets/icons/order-img.svg'
+
 
 class Basket {
   renderItem(img, price, descr, weight, id, count = 1) {
@@ -117,57 +118,16 @@ class Basket {
 		modalInner = modal.querySelector('.modal__inner'),
 		orderBtn = document.querySelector('.basket__btn')
 
-    const order = `
-		<div class="order">
-			<div class="order__left">
-				<img class="order__img" src=${orderImg} alt="Pancake">
-			</div>
-			<div class="order__right">
-				<form action="" class="order__form form">
-					<h3 class="form__title third-title">Доставка</h3>
-					<div class="form__block">
-						<input type="text" class="form__input" name="name" placeholder="Ваше имя"/>
-					</div>
-					<div class="form__block">
-						<input type="text" class="form__input" name="phone" placeholder="Телефон" />
-					</div>
-					<div class="form__block">
-						<label class="form__label" for="pickup">
-							<input id="pickup" type="radio" name="radio" class="form__radio" name="pickup" />
-							Самовывоз
-						</label>
-					</div>
-					<div class="form__block">
-						<label class="form__label" for="delivery">
-							<input id="delivery" type="radio" name="radio" class="form__radio" name="delivery" />
-							Доставка
-						</label>
-					</div>
-					<div class="form__block">
-						<input type="text" class="form__input" name="address" placeholder="Улица, дом, квартира" />
-					</div>
-					<div class="form__block form__block_half">
-						<input type="text" class="form__input" name="floor" placeholder="Этаж" />
-					</div>
-					<div class="form__block form__block_half">
-						<input type="text" class="form__input" name="intercom" placeholder="Домофон"  />
-					</div>
-
-					<button id="form__btn" class="form__btn btn">Оформить</button>
-				</form>
-			</div>
-			<button class="modal__btn" data-close="">x</button>
-		</div>
-	`
+   
 
 		orderBtn.addEventListener('click', () => {
 			modal.classList.remove('none')
 			modal.classList.add('modal__active')
-			modalInner.innerHTML = order
+			modalInner.innerHTML = Order.render()
 			document.body.style.overflow = 'hidden'
 		})
 
-	return order
+
   }
 }
 

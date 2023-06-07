@@ -1,27 +1,32 @@
 .form 
-	display: grid
-	grid-template-columns: 1fr 1fr
 	padding: 0 2.4rem 2.4rem 2.4rem
-	column-gap: 8px
 	&__title
-		grid-column: 1 / -1
 		margin-bottom: 1.6rem
-	&__block
-		grid-column: 1 / -1
+	&__block 
 		margin-bottom: 8px
+		transition: all .3s ease
 		&:nth-child(3)
 			margin-bottom: 16px
 		&:nth-child(4)
-			margin-bottom: 12px
-		&:nth-child(5)
 			margin-bottom: 16px
-		&:nth-child(8)
+		&:nth-child(5)
 			margin-bottom: 32px
-		&_half 
-			grid-column: span 1
+		&-dynamic
+			display: grid 
+			grid-template-columns: 1fr 1fr
+			gap: 8px
+			max-height: 0
+			opacity: 0
+			visibility: hidden
+			will-change: max-height
+			transition: all .3s ease-out
+			&>:nth-child(1)
+				grid-column: 1 / -1
+			&>* 
+				grid-column: span 1
 	&__btn.btn
-		grid-column: 1 / -1
 		@include btn($secondary-color, $light-color)
+		width: 100%
 	&__input 
 		width: 100%
 		padding: 9px
@@ -42,6 +47,8 @@
 		column-gap: 5px
 		@include font(1.2rem, 1.6rem)
 		cursor: pointer
+		&:not(:last-child)
+			margin-bottom: 12px
 	&__radio 
 		accent-color: $dark-color
 		ackground: #FFFFFF

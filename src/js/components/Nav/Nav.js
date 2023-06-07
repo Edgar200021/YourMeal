@@ -17,7 +17,7 @@ class Nav{
 		const nav = `
 		<nav class="nav">
 			<ul class="nav__list">
-				${NavItem.render(burger, 'Бургеры', 1)}
+				${NavItem.render(burger, 'Бургеры', 1, 'active')}
 				${NavItem.render(onion, 'Закуски', 2)}
 				${NavItem.render(hotdog, 'Хот-доги', 3)}
 				${NavItem.render(fastFood, 'Комбо', 4)}
@@ -53,15 +53,19 @@ class Nav{
 				return
 			}
 
-			const productList = document.querySelector(`[data-products="${target.dataset.tab}"`)
+			const productList = document.querySelector(`[data-products="${target.dataset.tab}"`),
+				tabs = document.querySelectorAll('[data-tab')
 
 			productsList.forEach(productList => {
 				productList.classList.add('none')
 				productList.classList.remove('show')
 			})
+
+			tabs.forEach(tab => tab.classList.remove('active'))
 		
 			productList.classList.add('show')
 			productList.classList.remove('none')
+			target.classList.add('active')
 		})
 	}
 
