@@ -27,6 +27,7 @@ This is my first full-fledged pure js project using ***modules*** and ***webpack
 
 ```
 npx json-server .src/js/db/db.json
+npm run start
 ```
 
 
