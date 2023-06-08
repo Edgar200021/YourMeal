@@ -75,8 +75,7 @@ class Order {
     const modal = document.querySelector('.modal'),
 		form = modal.querySelector('.form')
 
- 
-	console.log(form)
+
   }
 }
 

@@ -22,3 +22,21 @@
 	&:active
 		transform: translateY(-2px)
 		background-color: lighten($bg-color, 1%)
+
+
+@mixin respond($breakpoint)
+	@if $breakpoint == 'mini-phone'
+		@media (max-width: 400px)
+			@content
+	@if $breakpoint == 'phone'
+		@media (max-width: 600px)
+			@content
+	@if $breakpoint == 'mini-tablet'
+		@media (max-width: 743px)
+			@content
+	@if $breakpoint == 'tablet'
+		@media (max-width: 1055px)
+			@content
+	@if $breakpoint == 'desktop'
+		@media (max-width: 1200px)
+			@content

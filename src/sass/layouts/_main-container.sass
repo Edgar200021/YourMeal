@@ -1,3 +1,5 @@
 .main__container 
 	display: grid 
 	grid-template-columns: [full-start] minmax(4rem, 1fr) [center-start] repeat(8, [col-start]minmax(min-content, 16rem) [col-end])[center-end]  minmax(4rem, 1fr)[full-end]
+	@include respond(mini-tablet)
+		position: relative

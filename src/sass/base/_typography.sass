@@ -25,12 +25,19 @@
 
 html 
 	font-size: 62.5%
-
+	@include respond(desktop)
+		font-size: 55%
+	@include respond(tablet)
+		font-size: 50%
+	@include respond(mini-tablet)
+		font-size: 40%
 body 
 	font-family: 'nunito', sans-serif
 
 .first-title 
 	@include font(5rem, 120%, 800)
+	@include respond(tablet)
+		@include font(4.4rem, 120%, 800)
 
 .second-title 
 	@include font(4rem, 120%, 600)

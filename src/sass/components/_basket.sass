@@ -7,17 +7,32 @@
 	margin-right: 3rem
 	margin-top: 7.3rem
 	margin-bottom: 10rem
+	transition: all .3s ease
+	@include respond(mini-tablet)
+		position: absolute 
+		left: 0 
+		top: 0rem
+		max-height: 6rem
+		overflow: hidden
+		width: 20rem
+		margin-top: 0
+	@include respond(mini-phone)
+		grid-column: center-start / center-end
 	&__inner 
+		position: relative
 		padding: 2.4rem 1.6rem
 		display: grid 
 		grid-template-rows: min-content minmax(25rem, 36rem) repeat(3, min-content)
 	&__top 
+		position: relative
 		display: flex 
 		justify-content: space-between
 		align-items: center
 		padding-bottom: 1.2rem
 		margin-bottom: 1.6rem
 		border-bottom: 2px solid $grey-color
+		@include respond(mini-tablet)
+			cursor: pointer
 	&__count 
 		display: inline-block
 		padding: 2px 1.7rem
@@ -95,6 +110,33 @@
 			width: 24px 
 			height: 24px 
 			background: url('../../assets/icons/delivery.png') center/cover no-repeat
-		
-			
-
+	&__notification 
+		object-fit: contain		
+		@include respond(mini-tablet)
+			max-height: 25vh
+	&__collapse-btn 
+		position: absolute
+		bottom: 15px
+		right: 10px
+		display: none
+		background: none 
+		border: none
+		color: #B1B1B1
+		@include font(1.4rem, 1.2rem)
+		transition: transform .3s ease, color .3s ease
+		&:hover 
+			transform: scale(1.2)
+			color: $secondary-color
+		@include respond(mini-tablet)
+			display: block
+	&__open-btn 
+		position: absolute 
+		left: 0 
+		top: 0 
+		width: 100%
+		height: 100%
+		background: none 
+		border: none
+		display: none 
+		@include respond(mini-tablet)
+			display: block

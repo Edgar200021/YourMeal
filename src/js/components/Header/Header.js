@@ -20,7 +20,7 @@ class Header{
 				</div>
 
 				<div class="header__content-info">
-				<h1 class="header__title first-title"><span class="header__suptitle">Только самые</span><br>
+				<h1 class="header__title first-title"><span class="header__suptitle">Только самые</span><br class = "header__br">
 					<span class="header__subtitle">сочные бургеры!</span>
 				</h1>
 				<span class="header__descr">Бесплатная доставка от 599₽</span>

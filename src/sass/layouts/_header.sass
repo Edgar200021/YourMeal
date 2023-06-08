@@ -5,13 +5,21 @@
 	background-repeat: no-repeat
 	background-size: 250vw
 	background-position: bottom
+	@include respond(mini-tablet)
+		background-size: 350vw
 	&__inner
 		max-width: 50% 
 		margin: 0 auto
+		@include respond(tablet)
+			max-width: 60%
+		@include respond(phone)
+			text-align: center
 	&__logo-box
 		position: relative
 		text-align: center
 		margin-bottom: 5rem
+		@include respond(phone)
+			margin-bottom: 2rem
 	&__logo-icon 
 		max-width: 15rem
 		transition: transform .3s ease
@@ -24,8 +32,16 @@
 		display: flex
 		align-items: center
 		column-gap: 6rem
+		@include respond(phone)
+			flex-direction: column-reverse
+			gap: 4rem 0
+		@include respond(mini-tablet)
+			justify-content: center
 		&-img__box 
 			position: relative
+			min-width: 18rem
+			@include respond(tablet)
+				flex: 1
 			&::after 
 				content: ''
 				position: absolute 
@@ -36,12 +52,25 @@
 				height: 25px
 				background-color: #F2A40C
 				border-radius: 50%
+		&-info 
+			@include respond(tablet)
+				flex: 2
+		&-img 
+			@include respond(mini-tablet)
+				max-width: 25rem
 	&__title 
 		margin-bottom: 5rem
 		color: $light-color
+		@include respond(phone)
+			margin-bottom: 2rem
 	&__subtitle 
 		color: $secondary-color
+		@include respond(tablet)
+			white-space: nowrap
 	&__descr 
 		color: $light-color 
 		@include font(1.6rem, 2.2rem)
+	&__br 
+		@include respond(mini-tablet)
+			display: none
 		

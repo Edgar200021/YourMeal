@@ -1,5 +1,10 @@
 .form 
 	padding: 0 2.4rem 2.4rem 2.4rem
+	@include respond(mini-phone)
+		min-height: 95vh
+		display: grid
+		grid-template-rows: repeat(4, min-content) 1fr 
+		align-items: start
 	&__title
 		margin-bottom: 1.6rem
 	&__block 
@@ -27,6 +32,7 @@
 	&__btn.btn
 		@include btn($secondary-color, $light-color)
 		width: 100%
+	
 	&__input 
 		width: 100%
 		padding: 9px

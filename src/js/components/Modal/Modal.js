@@ -26,9 +26,9 @@ class Modal {
         target.classList.contains('modal__active') ||
         target.matches('[data-close]')
       ) {
+		modalInner.innerHTML = ''
         parent.classList.add('none')
         parent.classList.remove('modal__active')
-		modalInner.innerHTML = ``
 		document.body.style.overflow = 'auto'
       }
     })

@@ -12,6 +12,8 @@
 		z-index: 1
 		border-top-left-radius: 24px
 		border-bottom-left-radius: 24px
+		@include respond(mini-tablet)
+			display: none
 	&__left 
 		position: relative
 		text-align: center
@@ -28,9 +30,14 @@
 			height: 25px
 			background-color: #F2A40C
 			border-radius: 50%
+		@include respond(mini-tablet)
+			display: none
 	&__right 
 		flex: 1
 		z-index: 2
+		@include respond(mini-tablet)
+		min-width: 70%
+			max-width: 70%
 	&__img 
 		max-width: 19rem
 		min-width: 19rem

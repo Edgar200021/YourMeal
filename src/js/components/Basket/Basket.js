@@ -2,7 +2,6 @@ import { UNIQUE_PRODUCTS_ID } from '../../constants/uniques'
 import Order from '../Order'
 import emptyBasket from '/src/assets/img/notifications/empty-basket.png'
 
-
 class Basket {
   renderItem(img, price, descr, weight, id, count = 1) {
     const basketItem = `<li class="basket__item" data-id="${id}">
@@ -32,6 +31,7 @@ class Basket {
 					<div class="basket__top">
 					<h3 class="basket__title third-title">Корзина</h3>
 					<span class="basket__count">0</span>
+					<button class="basket__open-btn"></button>
 					</div>
 					<ul class="basket__list">
 						<div class="basket__notification-box">
@@ -45,6 +45,8 @@ class Basket {
 					</div>
 					<button class="btn basket__btn">Оформить заказ</button>
 					<span class="basket__delivery">Бесплатная доставка</span>
+				<button class="basket__collapse-btn">Свернуть</button>
+					
 				</div>
 			</article>
 		`
@@ -113,21 +115,43 @@ class Basket {
   }
 
   placeAnOrder() {
-	
-	const modal = document.querySelector('.modal'),
-		modalInner = modal.querySelector('.modal__inner'),
-		orderBtn = document.querySelector('.basket__btn')
+    const modal = document.querySelector('.modal'),
+      modalInner = modal.querySelector('.modal__inner'),
+      orderBtn = document.querySelector('.basket__btn')
 
-   
+    orderBtn.addEventListener('click', () => {
+      modal.classList.remove('none')
+      modal.classList.add('modal__active')
+      modalInner.innerHTML = Order.render()
+      document.body.style.overflow = 'hidden'
+    })
+  }
 
-		orderBtn.addEventListener('click', () => {
-			modal.classList.remove('none')
-			modal.classList.add('modal__active')
-			modalInner.innerHTML = Order.render()
-			document.body.style.overflow = 'hidden'
-		})
+  openBasket() {
+	const openBtn = document.querySelector('.basket__open-btn')
 
+	openBtn.addEventListener('click', (e) => {
+		const target = e.target
 
+		const parent = target.closest('.basket')
+
+		parent.style.maxHeight = parent.scrollHeight + 'px'
+		parent.style.width = '33rem'
+	})
+  }
+
+  closeBasket() {
+	const closeBtn = document.querySelector('.basket__collapse-btn')
+
+	closeBtn.addEventListener('click', (e) => {
+		const target = e.target
+
+		
+		const parent = target.closest('.basket')
+
+		parent.style.maxHeight = '6rem'
+		parent.style.width = '20rem'
+	})
   }
 }
 

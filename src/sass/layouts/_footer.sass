@@ -8,9 +8,25 @@
 		justify-content: flex-end 
 		align-items: flex-start
 		gap: 12.6rem
+		@include respond(desktop)
+			padding: 0 2rem
+		@include respond(mini-tablet)
+			align-items: center
+			flex-wrap: wrap
+			justify-content: space-between
+			gap: 8rem
+		@include respond(phone)
+			justify-content: center
+		@include respond(mini-phone)
+			justify-content: center
 	&__left 
 		margin-right: auto
 		@include font(1.2rem, 1.6rem)
+		@include respond(mini-tablet)
+			margin: 0
+		@include respond(phone)
+			text-align: center 
+			@include font(1.8rem, 1.6rem)
 		& * 
 			display: block
 	&__logo 
@@ -42,6 +58,8 @@
 	&__social 
 		display: flex 
 		gap: 1.6rem
+		@include respond(phone) 
+			justify-content: center
 		&-link
 			display: inline-block
 			width: 36px 

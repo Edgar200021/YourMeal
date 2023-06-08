@@ -17,6 +17,8 @@ window.addEventListener('DOMContentLoaded', () => {
 	Products.showProductModal('.products')
     Basket.calcPrice('.basket__list')
 	Basket.placeAnOrder()
+	Basket.openBasket()|
+	Basket.closeBasket()
 	Nav.toggleContent()
 	Modal.closeModal('.modal')
 	Modal.closeModalWithKeyboard()
